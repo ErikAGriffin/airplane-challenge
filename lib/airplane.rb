@@ -6,14 +6,14 @@ class Airplane
     @status = 'flying'
   end
 
-
-
-  def land
-    @status = 'landed'
+  def land(location)
+    @status = location
   end
 
   def takeoff
     @status = 'flying'
   end
+
+
 
 end

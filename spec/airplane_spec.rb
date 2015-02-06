@@ -12,18 +12,20 @@ describe Airplane do
   end
 
   it "should be able to land" do
-
     expect(boeing.status).to eq 'flying'
-    boeing.land
-    expect(boeing.status).to eq 'landed'
+    boeing.land('airport')
+    expect(boeing.status).to eq 'airport'
   end
 
   it "should be able to takeoff" do
-    boeing.land
+    boeing.land('airport')
     boeing.takeoff
     expect(boeing.status).to eq 'flying'
-
   end
+
+
+
+
 
 
 
