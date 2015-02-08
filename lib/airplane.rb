@@ -14,6 +14,14 @@ class Airplane
     @status = 'flying'
   end
 
+  def request_landing_at(destination)
+    if destination.approve_for_landing?(self)
+      self.land(destination)
+      # !!
+      p self.status
+    end
+  end
+
 
 
 end

@@ -10,25 +10,36 @@ class Airport
 
   def get_weather
 
-    if rand(30) > 19 ? @weather : @weather
-      @weather = 'stormy'
-    else
-      @weather = 'sunny'
-    end
+    rand(30) > 19 ? @weather='stormy' : @weather = 'sunny'
 
   end
 
-
-  def land(plane)
-    if @weather == 'sunny'
-      approve_for_landing(plane)
-      plane.land
-    end
-  end
-
-  def approve_for_landing(plane)
+  def house(plane)
     @airplanes << plane
   end
+
+  def release(plane)
+    @airplanes.delete(plane)
+  end
+
+  def approve_for_landing?(plane)
+    if @weather == 'sunny'
+      house(plane)
+      return true
+    else
+      return false
+    end
+  end
+
+  def approve_for_takeoff?(plane)
+    if @weather == 'sunny'
+      release(plane)
+      return true
+    else
+      return false
+    end
+  end
+
 
 
 

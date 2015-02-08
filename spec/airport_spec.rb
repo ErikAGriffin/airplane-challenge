@@ -2,6 +2,8 @@ require 'airport'
 
 describe 'Airport' do
 
+  let(:plane) {double :airplane, land: nil, takeoff: nil}
+
   def make_it_stormy
     while gatwick.weather != 'stormy'
       gatwick.get_weather
@@ -15,41 +17,36 @@ describe 'Airport' do
   end
 
   it 'gives a new weather status when asked' do
-
     expect(gatwick).to receive(:get_weather)
     puts gatwick.get_weather
-
   end
 
   it 'should occasionally give stormy weather' do
-
-    # It works, I promise.
-
-    #expect(gatwick.weather).to
-    make_it_stormy
-
+    # !! **
+    # This test is still not working as intended.
+    expect(gatwick.get_weather).to satisfy{|s| ["stormy", "sunny"].include?(s)}
   end
 
 
   it 'should approve planes for landing when its sunny' do
-    plane = double :airplane
-
-    gatwick.land(plane)
-
+    gatwick.approve_for_landing?(plane)
     expect(gatwick.airplanes).to eq [plane]
   end
 
 
   it 'should deny planes for landing when its stormy' do
 
-    plane = double :airplane
-
     make_it_stormy
-    gatwick.land(plane)
+    gatwick.approve_for_landing?(plane)
     expect(gatwick.airplanes).to eq []
-
-
   end
+
+  it 'should approve planes for takeoff when sunny' do
+    gatwick.house(plane)
+    gatwick.approve_for_takeoff?(plane)
+    expect(gatwick.airplanes).to eq []
+  end
+
 
 
 
