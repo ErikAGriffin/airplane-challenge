@@ -15,11 +15,7 @@ class Airplane
   end
 
   def request_landing_at(destination)
-    if destination.approve_for_landing?(self)
-      self.land(destination)
-    end
+    land(destination) if destination.approve_for_landing?(self)
   end
-
-
 
 end

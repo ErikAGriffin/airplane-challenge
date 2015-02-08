@@ -47,6 +47,12 @@ describe 'Airport' do
     expect(gatwick.airplanes).to eq []
   end
 
+  it 'should deny planes for takeoff when stormy' do
+    make_it_stormy
+    gatwick.house(plane)
+    gatwick.approve_for_takeoff?(plane)
+    expect(gatwick.airplanes).to eq [plane]
+  end
 
 
 
