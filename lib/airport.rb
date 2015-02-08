@@ -20,10 +20,6 @@ class Airport
     @airplanes.delete(plane)
   end
 
-    # Works because when true the array
-    # @airplanes is returned. Any object
-    # not false or nil is treated as true.
-
   def approve_for_landing?(plane)
     @weather == 'sunny' ? house(plane) : false
   end
