@@ -18,4 +18,8 @@ class Airplane
     land(destination) if destination.approve_for_landing?(self)
   end
 
+  def request_takeoff_from(airport)
+    takeoff if airport.approve_for_takeoff?(self)
+  end
+
 end
