@@ -22,9 +22,8 @@ describe 'Airport' do
   end
 
   it 'should occasionally give stormy weather' do
-    # !! **
-    # This test is still not working as intended.
-    expect(gatwick.get_weather).to satisfy{|s| ["stormy", "sunny"].include?(s)}
+    allow(gatwick).to receive(:get_weather).and_return("stormy")
+    expect(gatwick.get_weather).to eq 'stormy'
   end
 
 
