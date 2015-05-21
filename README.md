@@ -1,20 +1,32 @@
 <h1>Airplane Challenge</h1>
 
-<p>Started at 12:00pm on Friday
-<br />Present Documentation
-<br /><b>Airplane</b>
-  <br />should know if it's flying
-  <br />should be able to land
-  <br />should be able to takeoff
-  <br />should request landing at an airport
-  <br />should be landed at requested airport, if its sunny
+Our first challenge at Maker's Academy to use TDD and Object Oriented Design to fulfill the following user story:
 
-<br /><b>Airport</b>
-  <br />can have clear weather
-  <br />gives a new weather status when asked
-  <br />should occasionally give stormy weather
-  <br />should approve planes for landing when its sunny
-  <br />should deny planes for landing when its stormy
-  <br />should approve planes for takeoff when sunny
-  <br />should deny planes for takeoff when stormy
-</p>
+
+<b>As a pilot</b>
+<br/>
+So that I can arrive at my specified destination
+<br/>
+I would like to land my plane at the appropriate airport
+<br/>
+
+
+<b>As a pilot</b>
+<br/>
+So that I can set off for my specified destination
+<br/>
+I would like to be able to take off from the appropriate airport
+<br/>
+
+<b>As an air traffic controller</b>
+<br/>
+So that I can avoid collisions
+<br/>
+I want to be able to prevent airplanes landing when the airport if full
+<br/>
+
+<b>As an air traffic controller</b>
+<br/>
+So that I can avoid accidents
+<br/>
+I want to be able to prevent airplanes landing when the weather is stormy
